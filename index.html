@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ciphra - Advanced Cipher Suite Configuration</title>
+  <meta name="description" content="Ciphra provides an intuitive interface for configuring and testing cipher suites with advanced encryption algorithms.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Sofia Pro Font -->
+  <link rel="stylesheet" href="https://use.typekit.net/yjp3aho.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    body { font-family: "sofia-pro", sans-serif; }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .security-pattern {
+      background-image: 
+        radial-gradient(circle at 2px 2px, rgba(255,255,255,0.1) 1px, transparent 0);
+      background-size: 20px 20px;
+    }
+    
+    .animate-pulse-slow {
+      animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Navigation -->
+  <div id="navbar-container" data-source="components/navbar.html"></div>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen gradient-bg security-pattern overflow-hidden" data-id="hero-section">
+    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+    
+    <!-- Floating Security Icons -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-20 left-10 text-white opacity-20 float-animation" style="animation-delay: 0s;">
+        <i data-lucide="shield-check" class="w-8 h-8"></i>
+      </div>
+      <div class="absolute top-32 right-16 text-white opacity-20 float-animation" style="animation-delay: 1s;">
+        <i data-lucide="lock" class="w-6 h-6"></i>
+      </div>
+      <div class="absolute bottom-40 left-20 text-white opacity-20 float-animation" style="animation-delay: 2s;">
+        <i data-lucide="key" class="w-7 h-7"></i>
+      </div>
+      <div class="absolute bottom-60 right-10 text-white opacity-20 float-animation" style="animation-delay: 1.5s;">
+        <i data-lucide="fingerprint" class="w-8 h-8"></i>
+      </div>
+    </div>
+    
+    <div class="relative z-10 container mx-auto px-6 py-20">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="mb-8 inline-flex items-center glass-effect rounded-full px-4 py-2" data-id="hero-badge">
+          <i data-lucide="shield" class="w-4 h-4 mr-2 text-blue-300"></i>
+          <span class="text-sm font-medium text-blue-200">Enterprise-Grade Security</span>
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight" data-id="hero-title">
+          <span class="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+            Ciphra
+          </span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto leading-relaxed" data-id="hero-subtitle">
+          Advanced Cipher Suite Configuration & Testing Platform for Modern Encryption Standards
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12" data-id="hero-cta-container">
+          <a href="configure.html" class="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-xl" data-id="primary-cta-button">
+            <i data-lucide="settings" class="w-5 h-5 inline mr-2"></i>
+            Configure Cipher Suite
+          </a>
+          <a href="demo.html" class="glass-effect px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:bg-opacity-20 transition-all duration-300 border border-white border-opacity-30" data-id="secondary-cta-button">
+            <i data-lucide="play" class="w-5 h-5 inline mr-2"></i>
+            Live Demo
+          </a>
+        </div>
+        
+        <!-- Trust Indicators -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto" data-id="trust-indicators">
+          <div class="glass-effect rounded-xl p-6 text-center" data-id="trust-item-1">
+            <div class="w-12 h-12 bg-green-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3">
+              <i data-lucide="check-circle" class="w-6 h-6 text-green-300"></i>
+            </div>
+            <h3 class="font-semibold text-white mb-2">256-bit Encryption</h3>
+            <p class="text-blue-200 text-sm">Military-grade security standards</p>
+          </div>
+          
+          <div class="glass-effect rounded-xl p-6 text-center" data-id="trust-item-2">
+            <div class="w-12 h-12 bg-blue-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3">
+              <i data-lucide="zap" class="w-6 h-6 text-blue-300"></i>
+            </div>
+            <h3 class="font-semibold text-white mb-2">Real-time Testing</h3>
+            <p class="text-blue-200 text-sm">Instant cipher validation</p>
+          </div>
+          
+          <div class="glass-effect rounded-xl p-6 text-center" data-id="trust-item-3">
+            <div class="w-12 h-12 bg-purple-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3">
+              <i data-lucide="users" class="w-6 h-6 text-purple-300"></i>
+            </div>
+            <h3 class="font-semibold text-white mb-2">Expert Approved</h3>
+            <p class="text-blue-200 text-sm">Trusted by security professionals</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-gray-900" data-id="features-section">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white" data-id="features-title">
+          Powerful Cipher Suite Management
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-id="features-subtitle">
+          Comprehensive tools for configuring, testing, and optimizing your encryption protocols with industry-leading security standards.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" data-id="features-grid">
+        <!-- Feature 1 -->
+        <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-blue-500 transition-all duration-300 group" data-id="feature-item-1">
+          <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="settings" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 text-white">Interactive Configuration</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Intuitive interface for selecting and customizing cipher algorithms, key exchange methods, and authentication protocols.
+          </p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-green-500 transition-all duration-300 group" data-id="feature-item-2">
+          <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="activity" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 text-white">Real-time Validation</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Instant feedback on cipher suite compatibility, performance metrics, and security strength assessments.
+          </p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-purple-500 transition-all duration-300 group" data-id="feature-item-3">
+          <div class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="book-open" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 text-white">Educational Resources</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Comprehensive explanations of each cipher's purpose, strengths, and appropriate use cases for all skill levels.
+          </p>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-yellow-500 transition-all duration-300 group" data-id="feature-item-4">
+          <div class="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 text-white">Security Analysis</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Advanced security assessment tools that evaluate your cipher suite configuration against modern threat models.
+          </p>
+        </div>
+        
+        <!-- Feature 5 -->
+        <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-red-500 transition-all duration-300 group" data-id="feature-item-5">
+          <div class="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="target" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 text-white">Performance Testing</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Benchmark your cipher suite configurations with performance metrics including latency, throughput, and resource usage.
+          </p>
+        </div>
+        
+        <!-- Feature 6 -->
+        <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-indigo-500 transition-all duration-300 group" data-id="feature-item-6">
+          <div class="w-12 h-12 bg-indigo-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="download" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 text-white">Export & Integration</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Export your optimized cipher suite configurations in multiple formats for seamless integration with your applications.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="py-20 bg-gray-800" data-id="how-it-works-section">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white" data-id="how-it-works-title">
+          How Ciphra Works
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-id="how-it-works-subtitle">
+          Simple three-step process to configure, test, and deploy your optimal cipher suite configuration.
+        </p>
+      </div>
+      
+      <div class="max-w-5xl mx-auto">
+        <div class="relative">
+          <!-- Connection Line -->
+          <div class="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 transform -translate-y-1/2 z-0"></div>
+          
+          <div class="grid md:grid-cols-3 gap-8 relative z-10" data-id="process-steps">
+            <!-- Step 1 -->
+            <div class="text-center group" data-id="process-step-1">
+              <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl">
+                <span class="text-2xl font-bold text-white">1</span>
+              </div>
+              <h3 class="text-2xl font-semibold mb-4 text-white">Configure</h3>
+              <p class="text-gray-300 leading-relaxed">
+                Select your preferred cipher algorithms, key exchange methods, and authentication protocols using our intuitive interface.
+              </p>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="text-center group" data-id="process-step-2">
+              <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl">
+                <span class="text-2xl font-bold text-white">2</span>
+              </div>
+              <h3 class="text-2xl font-semibold mb-4 text-white">Test</h3>
+              <p class="text-gray-300 leading-relaxed">
+                Run comprehensive security and performance tests to validate your configuration against industry standards and threat models.
+              </p>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="text-center group" data-id="process-step-3">
+              <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl">
+                <span class="text-2xl font-bold text-white">3</span>
+              </div>
+              <h3 class="text-2xl font-semibold mb-4 text-white">Deploy</h3>
+              <p class="text-gray-300 leading-relaxed">
+                Export your optimized cipher suite configuration and integrate it seamlessly into your applications and infrastructure.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 gradient-bg" data-id="cta-section">
+    <div class="container mx-auto px-6 text-center">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white" data-id="cta-title">
+          Ready to Secure Your Applications?
+        </h2>
+        <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto" data-id="cta-subtitle">
+          Start configuring your cipher suite today with Ciphra's advanced tools and expert guidance.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center" data-id="cta-buttons">
+          <a href="configure.html" class="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-xl" data-id="cta-primary-button">
+            <i data-lucide="arrow-right" class="w-5 h-5 inline mr-2"></i>
+            Get Started Now
+          </a>
+          <a href="about.html" class="glass-effect px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:bg-opacity-20 transition-all duration-300 border border-white border-opacity-30" data-id="cta-secondary-button">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-container" data-source="components/footer.html"></div>
+  
+  <!-- Badge -->
+  <div id="badge-container" data-source="components/badge.html"></div>
+
+  <script type="module">
+    import { loadComponent } from './scripts/components/loader.js';
+    
+    // Load all shared components
+    loadComponent('#navbar-container');
+    loadComponent('#footer-container');
+    loadComponent('#badge-container');
+    
+    // Initialize icons after components are loaded
+    setTimeout(() => {
+      lucide.createIcons();
+    }, 100);
+  </script>
+</body>
+</html>

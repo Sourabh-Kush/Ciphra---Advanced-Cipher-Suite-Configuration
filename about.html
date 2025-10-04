@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Ciphra - Advanced Cipher Suite Platform</title>
+  <meta name="description" content="Learn about Ciphra's mission to provide advanced cipher suite configuration and testing tools for modern encryption standards.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Sofia Pro Font -->
+  <link rel="stylesheet" href="https://use.typekit.net/yjp3aho.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    body { font-family: "sofia-pro", sans-serif; }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #3b82f6;
+    }
+    
+    .timeline-line::before {
+      content: '';
+      position: absolute;
+      left: -1px;
+      top: 12px;
+      bottom: -12px;
+      width: 2px;
+      background: linear-gradient(to bottom, #3b82f6, #6366f1);
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Navigation -->
+  <div id="navbar-container" data-source="components/navbar.html"></div>
+
+  <!-- Hero Section -->
+  <section class="pt-24 pb-16 gradient-bg" data-id="about-hero">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white" data-id="about-title">
+        About Ciphra
+      </h1>
+      <p class="text-xl text-blue-100 max-w-3xl mx-auto" data-id="about-subtitle">
+        Empowering developers and security professionals with advanced cipher suite configuration and testing tools for the modern digital landscape.
+      </p>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="py-20 bg-gray-900" data-id="mission-section">
+    <div class="container mx-auto px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div data-id="mission-content">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white" data-id="mission-title">
+              Our Mission
+            </h2>
+            <p class="text-lg text-gray-300 mb-6 leading-relaxed" data-id="mission-description">
+              At Ciphra, we believe that robust encryption should be accessible to everyone. Our mission is to simplify the complex world of cipher suites while maintaining the highest security standards. We provide intuitive tools that help developers and security professionals make informed decisions about their encryption implementations.
+            </p>
+            <div class="space-y-4" data-id="mission-points">
+              <div class="flex items-start">
+                <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                  <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-white mb-1">Accessibility</h3>
+                  <p class="text-gray-400">Making advanced cryptography accessible to developers of all skill levels</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                  <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-white mb-1">Education</h3>
+                  <p class="text-gray-400">Providing comprehensive resources to understand modern encryption</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                  <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-white mb-1">Innovation</h3>
+                  <p class="text-gray-400">Staying at the forefront of cryptographic advances and standards</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-id="mission-image">
+            <div class="glass-effect rounded-2xl p-8 text-center">
+              <div class="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                <i data-lucide="shield-check" class="w-16 h-16 text-white"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-4">Security First</h3>
+              <p class="text-gray-300">
+                Every tool and recommendation is built with security as the primary consideration, ensuring your applications stay protected.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Deep Dive -->
+  <section class="py-20 bg-gray-800" data-id="features-deep-dive">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white" data-id="features-deep-title">
+          Why Choose Ciphra?
+        </h2>
+        <p class="text-lg text-gray-300 max-w-3xl mx-auto" data-id="features-deep-subtitle">
+          Our platform combines cutting-edge cryptographic knowledge with user-friendly design to deliver the most comprehensive cipher suite management experience.
+        </p>
+      </div>
+      
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-id="deep-features-grid">
+          
+          <!-- Feature 1 -->
+          <div class="bg-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-blue-500 transition-all duration-300 group" data-id="deep-feature-1">
+            <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i data-lucide="brain" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4 text-white">Intelligent Recommendations</h3>
+            <p class="text-gray-300 leading-relaxed">
+              Our AI-powered recommendation engine suggests optimal cipher suite configurations based on your specific use case, threat model, and performance requirements.
+            </p>
+          </div>
+          
+          <!-- Feature 2 -->
+          <div class="bg-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-green-500 transition-all duration-300 group" data-id="deep-feature-2">
+            <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i data-lucide="microscope" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4 text-white">Advanced Testing</h3>
+            <p class="text-gray-300 leading-relaxed">
+              Comprehensive testing suite that validates your cipher configurations against known vulnerabilities, performance benchmarks, and compliance requirements.
+            </p>
+          </div>
+          
+          <!-- Feature 3 -->
+          <div class="bg-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-purple-500 transition-all duration-300 group" data-id="deep-feature-3">
+            <div class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i data-lucide="graduation-cap" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4 text-white">Educational Platform</h3>
+            <p class="text-gray-300 leading-relaxed">
+              Interactive learning modules that explain complex cryptographic concepts in plain language, making security accessible to all team members.
+            </p>
+          </div>
+          
+          <!-- Feature 4 -->
+          <div class="bg-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-yellow-500 transition-all duration-300 group" data-id="deep-feature-4">
+            <div class="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i data-lucide="refresh-cw" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4 text-white">Always Updated</h3>
+            <p class="text-gray-300 leading-relaxed">
+              Stay current with the latest cryptographic standards, vulnerability disclosures, and best practices through our continuously updated knowledge base.
+            </p>
+          </div>
+          
+          <!-- Feature 5 -->
+          <div class="bg-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-red-500 transition-all duration-300 group" data-id="deep-feature-5">
+            <div class="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i data-lucide="layers" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4 text-white">Multi-Platform Support</h3>
+            <p class="text-gray-300 leading-relaxed">
+              Export configurations for multiple platforms and frameworks, ensuring seamless integration with your existing development workflow.
+            </p>
+          </div>
+          
+          <!-- Feature 6 -->
+          <div class="bg-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-indigo-500 transition-all duration-300 group" data-id="deep-feature-6">
+            <div class="w-12 h-12 bg-indigo-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i data-lucide="users" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4 text-white">Community Driven</h3>
+            <p class="text-gray-300 leading-relaxed">
+              Join a community of security professionals sharing knowledge, best practices, and contributing to the advancement of practical cryptography.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline/Roadmap -->
+  <section class="py-20 bg-gray-900" data-id="roadmap-section">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white" data-id="roadmap-title">
+          Development Roadmap
+        </h2>
+        <p class="text-lg text-gray-300 max-w-3xl mx-auto" data-id="roadmap-subtitle">
+          Our journey to build the most comprehensive cipher suite platform continues with exciting new features and improvements.
+        </p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="relative" data-id="timeline">
+          <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500 transform md:-translate-x-1/2"></div>
+          
+          <!-- Timeline Item 1 -->
+          <div class="relative flex items-center mb-12" data-id="timeline-item-1">
+            <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-gray-900"></div>
+            <div class="md:w-1/2 md:pr-8 md:text-right">
+              <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 ml-12 md:ml-0">
+                <div class="flex items-center mb-4 md:justify-end">
+                  <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center mr-3 md:mr-0 md:ml-3">
+                    <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                  </div>
+                  <span class="text-sm text-green-400 font-semibold">Completed</span>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">Core Platform Launch</h3>
+                <p class="text-gray-300 text-sm">
+                  Interactive cipher suite configuration, real-time testing, and educational resources.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Timeline Item 2 -->
+          <div class="relative flex items-center mb-12 md:flex-row-reverse" data-id="timeline-item-2">
+            <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-yellow-500 rounded-full border-4 border-gray-900"></div>
+            <div class="md:w-1/2 md:pl-8">
+              <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 ml-12 md:ml-0">
+                <div class="flex items-center mb-4">
+                  <div class="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center mr-3">
+                    <i data-lucide="clock" class="w-4 h-4 text-white"></i>
+                  </div>
+                  <span class="text-sm text-yellow-400 font-semibold">In Progress</span>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">API & Integration Layer</h3>
+                <p class="text-gray-300 text-sm">
+                  REST API for programmatic access and integrations with popular development tools and CI/CD pipelines.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Timeline Item 3 -->
+          <div class="relative flex items-center mb-12" data-id="timeline-item-3">
+            <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-gray-900"></div>
+            <div class="md:w-1/2 md:pr-8 md:text-right">
+              <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 ml-12 md:ml-0">
+                <div class="flex items-center mb-4 md:justify-end">
+                  <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mr-3 md:mr-0 md:ml-3">
+                    <i data-lucide="calendar" class="w-4 h-4 text-white"></i>
+                  </div>
+                  <span class="text-sm text-blue-400 font-semibold">Planned - Q2 2024</span>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">Advanced Analytics</h3>
+                <p class="text-gray-300 text-sm">
+                  Detailed performance analytics, security trend analysis, and custom reporting features.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Timeline Item 4 -->
+          <div class="relative flex items-center" data-id="timeline-item-4">
+            <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full border-4 border-gray-900"></div>
+            <div class="md:w-1/2 md:pl-8">
+              <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 ml-12 md:ml-0">
+                <div class="flex items-center mb-4">
+                  <div class="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center mr-3">
+                    <i data-lucide="zap" class="w-4 h-4 text-white"></i>
+                  </div>
+                  <span class="text-sm text-purple-400 font-semibold">Planned - Q3 2024</span>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">AI-Powered Optimization</h3>
+                <p class="text-gray-300 text-sm">
+                  Machine learning algorithms for automated cipher suite optimization based on real-world performance data.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="py-20 bg-gray-800" data-id="team-section">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white" data-id="team-title">
+          Built by Security Experts
+        </h2>
+        <p class="text-lg text-gray-300 max-w-3xl mx-auto" data-id="team-subtitle">
+          Our team combines decades of experience in cryptography, software engineering, and cybersecurity to deliver tools you can trust.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto" data-id="team-stats">
+        <div class="text-center bg-gray-900 rounded-2xl p-8 border border-gray-700" data-id="team-stat-1">
+          <div class="w-16 h-16 bg-blue-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="users" class="w-8 h-8 text-blue-400"></i>
+          </div>
+          <h3 class="text-3xl font-bold text-white mb-2">15+</h3>
+          <p class="text-gray-400">Security Professionals</p>
+        </div>
+        
+        <div class="text-center bg-gray-900 rounded-2xl p-8 border border-gray-700" data-id="team-stat-2">
+          <div class="w-16 h-16 bg-green-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="award" class="w-8 h-8 text-green-400"></i>
+          </div>
+          <h3 class="text-3xl font-bold text-white mb-2">50+</h3>
+          <p class="text-gray-400">Years Combined Experience</p>
+        </div>
+        
+        <div class="text-center bg-gray-900 rounded-2xl p-8 border border-gray-700" data-id="team-stat-3">
+          <div class="w-16 h-16 bg-purple-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="shield-check" class="w-8 h-8 text-purple-400"></i>
+          </div>
+          <h3 class="text-3xl font-bold text-white mb-2">100%</h3>
+          <p class="text-gray-400">Security Focused</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-20 gradient-bg" data-id="about-cta">
+    <div class="container mx-auto px-6 text-center">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white" data-id="about-cta-title">
+          Ready to Enhance Your Security?
+        </h2>
+        <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto" data-id="about-cta-description">
+          Join thousands of developers and security professionals who trust Ciphra for their cipher suite configuration needs.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center" data-id="about-cta-buttons">
+          <a href="configure.html" class="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-xl" data-id="about-cta-primary">
+            <i data-lucide="arrow-right" class="w-5 h-5 inline mr-2"></i>
+            Start Configuring
+          </a>
+          <a href="contact.html" class="glass-effect px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:bg-opacity-20 transition-all duration-300 border border-white border-opacity-30" data-id="about-cta-secondary">
+            Contact Our Team
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-container" data-source="components/footer.html"></div>
+  
+  <!-- Badge -->
+  <div id="badge-container" data-source="components/badge.html"></div>
+
+  <script type="module">
+    import { loadComponent } from './scripts/components/loader.js';
+    
+    // Load all shared components
+    loadComponent('#navbar-container');
+    loadComponent('#footer-container');
+    loadComponent('#badge-container');
+    
+    // Initialize icons after components are loaded
+    setTimeout(() => {
+      lucide.createIcons();
+    }, 100);
+  </script>
+</body>
+</html>

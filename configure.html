@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configure Cipher Suite - Ciphra</title>
+  <meta name="description" content="Configure and customize your cipher suite with advanced encryption algorithms and security protocols.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Sofia Pro Font -->
+  <link rel="stylesheet" href="https://use.typekit.net/yjp3aho.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    body { font-family: "sofia-pro", sans-serif; }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .config-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .active-selection {
+      background: rgba(59, 130, 246, 0.2);
+      border-color: rgb(59, 130, 246);
+    }
+    
+    .security-meter {
+      background: linear-gradient(90deg, #ef4444 0%, #f59e0b 50%, #10b981 100%);
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+  <!-- Navigation -->
+  <div id="navbar-container" data-source="components/navbar.html"></div>
+
+  <!-- Header -->
+  <section class="pt-24 pb-12 gradient-bg" data-id="configure-header">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white" data-id="configure-title">
+        Configure Cipher Suite
+      </h1>
+      <p class="text-xl text-blue-100 max-w-3xl mx-auto" data-id="configure-subtitle">
+        Build your custom cipher suite configuration with advanced encryption algorithms, key exchange methods, and authentication protocols.
+      </p>
+    </div>
+  </section>
+
+  <!-- Configuration Interface -->
+  <section class="py-12 bg-gray-900" data-id="configuration-section">
+    <div class="container mx-auto px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-3 gap-8">
+          <!-- Configuration Panel -->
+          <div class="lg:col-span-2 space-y-8" data-id="configuration-panel">
+            
+            <!-- Cipher Algorithm Selection -->
+            <div class="config-card rounded-2xl p-8" data-id="cipher-algorithm-section">
+              <div class="flex items-center mb-6">
+                <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
+                  <i data-lucide="lock" class="w-5 h-5 text-white"></i>
+                </div>
+                <div>
+                  <h2 class="text-2xl font-bold text-white">Cipher Algorithm</h2>
+                  <p class="text-gray-400">Choose your encryption algorithm</p>
+                </div>
+              </div>
+              
+              <div class="grid md:grid-cols-2 gap-4" data-id="cipher-options">
+                <div class="cipher-option p-4 border border-gray-700 rounded-xl hover:border-blue-500 cursor-pointer transition-all" data-cipher="aes-256-gcm" data-id="cipher-aes-256">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold text-white">AES-256-GCM</h3>
+                    <span class="text-xs bg-green-500 text-white px-2 py-1 rounded-full">Recommended</span>
+                  </div>
+                  <p class="text-gray-400 text-sm mb-3">Advanced Encryption Standard with 256-bit keys and Galois/Counter Mode</p>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="zap" class="w-4 h-4 mr-1"></i>
+                    <span>High Performance</span>
+                    <span class="ml-4">Security: 256-bit</span>
+                  </div>
+                </div>
+                
+                <div class="cipher-option p-4 border border-gray-700 rounded-xl hover:border-blue-500 cursor-pointer transition-all" data-cipher="chacha20-poly1305" data-id="cipher-chacha20">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold text-white">ChaCha20-Poly1305</h3>
+                    <span class="text-xs bg-blue-500 text-white px-2 py-1 rounded-full">Modern</span>
+                  </div>
+                  <p class="text-gray-400 text-sm mb-3">Modern stream cipher with Poly1305 authenticator</p>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="cpu" class="w-4 h-4 mr-1"></i>
+                    <span>Mobile Optimized</span>
+                    <span class="ml-4">Security: 256-bit</span>
+                  </div>
+                </div>
+                
+                <div class="cipher-option p-4 border border-gray-700 rounded-xl hover:border-blue-500 cursor-pointer transition-all" data-cipher="aes-128-gcm" data-id="cipher-aes-128">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold text-white">AES-128-GCM</h3>
+                    <span class="text-xs bg-yellow-500 text-white px-2 py-1 rounded-full">Balanced</span>
+                  </div>
+                  <p class="text-gray-400 text-sm mb-3">AES with 128-bit keys for balance of security and performance</p>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="trending-up" class="w-4 h-4 mr-1"></i>
+                    <span>Fast</span>
+                    <span class="ml-4">Security: 128-bit</span>
+                  </div>
+                </div>
+                
+                <div class="cipher-option p-4 border border-gray-700 rounded-xl hover:border-blue-500 cursor-pointer transition-all" data-cipher="aes-256-cbc" data-id="cipher-aes-cbc">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold text-white">AES-256-CBC</h3>
+                    <span class="text-xs bg-gray-500 text-white px-2 py-1 rounded-full">Legacy</span>
+                  </div>
+                  <p class="text-gray-400 text-sm mb-3">Traditional CBC mode for compatibility with older systems</p>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="shield" class="w-4 h-4 mr-1"></i>
+                    <span>Compatible</span>
+                    <span class="ml-4">Security: 256-bit</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Key Exchange -->
+            <div class="config-card rounded-2xl p-8" data-id="key-exchange-section">
+              <div class="flex items-center mb-6">
+                <div class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center mr-4">
+                  <i data-lucide="key" class="w-5 h-5 text-white"></i>
+                </div>
+                <div>
+                  <h2 class="text-2xl font-bold text-white">Key Exchange</h2>
+                  <p class="text-gray-400">Select key agreement protocol</p>
+                </div>
+              </div>
+              
+              <div class="grid md:grid-cols-2 gap-4" data-id="key-exchange-options">
+                <div class="key-exchange-option p-4 border border-gray-700 rounded-xl hover:border-purple-500 cursor-pointer transition-all" data-kex="ecdhe-x25519" data-id="kex-x25519">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold text-white">ECDHE-X25519</h3>
+                    <span class="text-xs bg-green-500 text-white px-2 py-1 rounded-full">Recommended</span>
+                  </div>
+                  <p class="text-gray-400 text-sm mb-3">Elliptic curve Diffie-Hellman with Curve25519</p>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="trending-up" class="w-4 h-4 mr-1"></i>
+                    <span>Perfect Forward Secrecy</span>
+                  </div>
+                </div>
+                
+                <div class="key-exchange-option p-4 border border-gray-700 rounded-xl hover:border-purple-500 cursor-pointer transition-all" data-kex="ecdhe-p256" data-id="kex-p256">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold text-white">ECDHE-P256</h3>
+                    <span class="text-xs bg-blue-500 text-white px-2 py-1 rounded-full">Standard</span>
+                  </div>
+                  <p class="text-gray-400 text-sm mb-3">NIST P-256 elliptic curve key exchange</p>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="shield-check" class="w-4 h-4 mr-1"></i>
+                    <span>NIST Approved</span>
+                  </div>
+                </div>
+                
+                <div class="key-exchange-option p-4 border border-gray-700 rounded-xl hover:border-purple-500 cursor-pointer transition-all" data-kex="dhe-2048" data-id="kex-dhe">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold text-white">DHE-2048</h3>
+                    <span class="text-xs bg-yellow-500 text-white px-2 py-1 rounded-full">Compatible</span>
+                  </div>
+                  <p class="text-gray-400 text-sm mb-3">Traditional Diffie-Hellman with 2048-bit prime</p>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="clock" class="w-4 h-4 mr-1"></i>
+                    <span>Slower</span>
+                  </div>
+                </div>
+                
+                <div class="key-exchange-option p-4 border border-gray-700 rounded-xl hover:border-purple-500 cursor-pointer transition-all" data-kex="rsa-2048" data-id="kex-rsa">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold text-white">RSA-2048</h3>
+                    <span class="text-xs bg-red-500 text-white px-2 py-1 rounded-full">Not Recommended</span>
+                  </div>
+                  <p class="text-gray-400 text-sm mb-3">RSA key transport (no forward secrecy)</p>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="alert-triangle" class="w-4 h-4 mr-1"></i>
+                    <span>No PFS</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Authentication -->
+            <div class="config-card rounded-2xl p-8" data-id="authentication-section">
+              <div class="flex items-center mb-6">
+                <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mr-4">
+                  <i data-lucide="fingerprint" class="w-5 h-5 text-white"></i>
+                </div>
+                <div>
+                  <h2 class="text-2xl font-bold text-white">Authentication</h2>
+                  <p class="text-gray-400">Choose authentication method</p>
+                </div>
+              </div>
+              
+              <div class="grid md:grid-cols-2 gap-4" data-id="auth-options">
+                <div class="auth-option p-4 border border-gray-700 rounded-xl hover:border-green-500 cursor-pointer transition-all" data-auth="ecdsa-p256" data-id="auth-ecdsa">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold text-white">ECDSA-P256</h3>
+                    <span class="text-xs bg-green-500 text-white px-2 py-1 rounded-full">Modern</span>
+                  </div>
+                  <p class="text-gray-400 text-sm mb-3">Elliptic Curve Digital Signature Algorithm</p>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="zap" class="w-4 h-4 mr-1"></i>
+                    <span>Fast Verification</span>
+                  </div>
+                </div>
+                
+                <div class="auth-option p-4 border border-gray-700 rounded-xl hover:border-green-500 cursor-pointer transition-all" data-auth="rsa-pss-2048" data-id="auth-rsa-pss">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold text-white">RSA-PSS-2048</h3>
+                    <span class="text-xs bg-blue-500 text-white px-2 py-1 rounded-full">Standard</span>
+                  </div>
+                  <p class="text-gray-400 text-sm mb-3">RSA with Probabilistic Signature Scheme</p>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="shield" class="w-4 h-4 mr-1"></i>
+                    <span>Proven Security</span>
+                  </div>
+                </div>
+                
+                <div class="auth-option p-4 border border-gray-700 rounded-xl hover:border-green-500 cursor-pointer transition-all" data-auth="ed25519" data-id="auth-ed25519">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold text-white">Ed25519</h3>
+                    <span class="text-xs bg-purple-500 text-white px-2 py-1 rounded-full">Advanced</span>
+                  </div>
+                  <p class="text-gray-400 text-sm mb-3">Edwards-curve Digital Signature Algorithm</p>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="star" class="w-4 h-4 mr-1"></i>
+                    <span>High Performance</span>
+                  </div>
+                </div>
+                
+                <div class="auth-option p-4 border border-gray-700 rounded-xl hover:border-green-500 cursor-pointer transition-all" data-auth="rsa-pkcs1-2048" data-id="auth-rsa-pkcs1">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold text-white">RSA-PKCS1-2048</h3>
+                    <span class="text-xs bg-yellow-500 text-white px-2 py-1 rounded-full">Legacy</span>
+                  </div>
+                  <p class="text-gray-400 text-sm mb-3">Traditional RSA with PKCS#1 v1.5 padding</p>
+                  <div class="flex items-center text-xs text-gray-500">
+                    <i data-lucide="archive" class="w-4 h-4 mr-1"></i>
+                    <span>Compatibility</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Summary Panel -->
+          <div class="lg:col-span-1" data-id="summary-panel">
+            <div class="sticky top-24 space-y-6">
+              <!-- Configuration Summary -->
+              <div class="config-card rounded-2xl p-6" data-id="config-summary">
+                <h3 class="text-xl font-bold text-white mb-4">Configuration Summary</h3>
+                
+                <div class="space-y-4">
+                  <div data-id="selected-cipher">
+                    <div class="flex items-center mb-2">
+                      <i data-lucide="lock" class="w-4 h-4 text-blue-400 mr-2"></i>
+                      <span class="text-sm font-medium text-gray-300">Cipher Algorithm</span>
+                    </div>
+                    <p class="text-white font-medium" id="cipher-display">Not Selected</p>
+                  </div>
+                  
+                  <div data-id="selected-kex">
+                    <div class="flex items-center mb-2">
+                      <i data-lucide="key" class="w-4 h-4 text-purple-400 mr-2"></i>
+                      <span class="text-sm font-medium text-gray-300">Key Exchange</span>
+                    </div>
+                    <p class="text-white font-medium" id="kex-display">Not Selected</p>
+                  </div>
+                  
+                  <div data-id="selected-auth">
+                    <div class="flex items-center mb-2">
+                      <i data-lucide="fingerprint" class="w-4 h-4 text-green-400 mr-2"></i>
+                      <span class="text-sm font-medium text-gray-300">Authentication</span>
+                    </div>
+                    <p class="text-white font-medium" id="auth-display">Not Selected</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Security Score -->
+              <div class="config-card rounded-2xl p-6" data-id="security-score">
+                <h3 class="text-xl font-bold text-white mb-4">Security Score</h3>
+                
+                <div class="mb-4">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm text-gray-300">Overall Security</span>
+                    <span class="text-white font-bold" id="security-percentage">0%</span>
+                  </div>
+                  <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                    <div class="security-meter h-full rounded-full transition-all duration-500" style="width: 0%" id="security-bar"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-3 text-sm">
+                  <div class="flex justify-between">
+                    <span class="text-gray-300">Encryption Strength</span>
+                    <span class="text-white" id="encryption-strength">-</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-300">Forward Secrecy</span>
+                    <span class="text-white" id="forward-secrecy">-</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-300">Authentication</span>
+                    <span class="text-white" id="auth-strength">-</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Actions -->
+              <div class="space-y-3" data-id="config-actions">
+                <button class="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed" id="test-config-btn" disabled data-id="test-config-button">
+                  <i data-lucide="play" class="w-4 h-4 inline mr-2"></i>
+                  Test Configuration
+                </button>
+                
+                <button class="w-full bg-green-600 text-white py-3 rounded-xl font-semibold hover:bg-green-700 transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed" id="export-config-btn" disabled data-id="export-config-button">
+                  <i data-lucide="download" class="w-4 h-4 inline mr-2"></i>
+                  Export Configuration
+                </button>
+                
+                <button class="w-full border border-gray-600 text-gray-300 py-3 rounded-xl font-semibold hover:border-gray-500 hover:text-white transition-colors" id="reset-config-btn" data-id="reset-config-button">
+                  <i data-lucide="refresh-cw" class="w-4 h-4 inline mr-2"></i>
+                  Reset Configuration
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-container" data-source="components/footer.html"></div>
+  
+  <!-- Badge -->
+  <div id="badge-container" data-source="components/badge.html"></div>
+
+  <script type="module">
+    import { loadComponent } from './scripts/components/loader.js';
+    import { initializeCipherConfig } from './scripts/cipher-config.js';
+    
+    // Load all shared components
+    loadComponent('#navbar-container');
+    loadComponent('#footer-container');
+    loadComponent('#badge-container');
+    
+    // Initialize configuration interface
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeCipherConfig();
+    });
+    
+    // Initialize icons after components are loaded
+    setTimeout(() => {
+      lucide.createIcons();
+    }, 100);
+  </script>
+</body>
+</html>

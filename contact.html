@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Ciphra</title>
+  <meta name="description" content="Get in touch with the Ciphra team for support, partnerships, or questions about our cipher suite platform.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Sofia Pro Font -->
+  <link rel="stylesheet" href="https://use.typekit.net/yjp3aho.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    body { font-family: "sofia-pro", sans-serif; }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .contact-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .form-input:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Navigation -->
+  <div id="navbar-container" data-source="components/navbar.html"></div>
+
+  <!-- Header -->
+  <section class="pt-24 pb-12 gradient-bg" data-id="contact-header">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white" data-id="contact-title">
+        Get In Touch
+      </h1>
+      <p class="text-xl text-blue-100 max-w-3xl mx-auto" data-id="contact-subtitle">
+        Have questions about Ciphra? Need support or want to discuss partnerships? We'd love to hear from you.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-20 bg-gray-900" data-id="contact-main">
+    <div class="container mx-auto px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12">
+          
+          <!-- Contact Form -->
+          <div class="contact-card rounded-2xl p-8" data-id="contact-form-section">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+              <i data-lucide="mail" class="w-6 h-6 mr-3"></i>
+              Send Us a Message
+            </h2>
+            
+            <form class="space-y-6" data-id="contact-form">
+              <div class="grid md:grid-cols-2 gap-4">
+                <div data-id="first-name-field">
+                  <label for="first-name" class="block text-sm font-medium text-gray-300 mb-2">First Name *</label>
+                  <input 
+                    type="text" 
+                    id="first-name" 
+                    name="firstName"
+                    required
+                    class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white form-input transition-colors focus:outline-none"
+                    placeholder="John"
+                  >
+                </div>
+                <div data-id="last-name-field">
+                  <label for="last-name" class="block text-sm font-medium text-gray-300 mb-2">Last Name *</label>
+                  <input 
+                    type="text" 
+                    id="last-name" 
+                    name="lastName"
+                    required
+                    class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white form-input transition-colors focus:outline-none"
+                    placeholder="Doe"
+                  >
+                </div>
+              </div>
+              
+              <div data-id="email-field">
+                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address *</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email"
+                  required
+                  class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white form-input transition-colors focus:outline-none"
+                  placeholder="john.doe@example.com"
+                >
+              </div>
+              
+              <div data-id="company-field">
+                <label for="company" class="block text-sm font-medium text-gray-300 mb-2">Company/Organization</label>
+                <input 
+                  type="text" 
+                  id="company" 
+                  name="company"
+                  class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white form-input transition-colors focus:outline-none"
+                  placeholder="Your Company Name"
+                >
+              </div>
+              
+              <div data-id="subject-field">
+                <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject *</label>
+                <select 
+                  id="subject" 
+                  name="subject"
+                  required
+                  class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white form-input transition-colors focus:outline-none"
+                >
+                  <option value="">Select a subject</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="support">Technical Support</option>
+                  <option value="partnership">Partnership Opportunity</option>
+                  <option value="feature">Feature Request</option>
+                  <option value="security">Security Issue</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div data-id="message-field">
+                <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message *</label>
+                <textarea 
+                  id="message" 
+                  name="message"
+                  required
+                  rows="6"
+                  class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white form-input transition-colors focus:outline-none resize-none"
+                  placeholder="Please describe your inquiry or message in detail..."
+                ></textarea>
+              </div>
+              
+              <div class="flex items-start" data-id="privacy-checkbox">
+                <input 
+                  type="checkbox" 
+                  id="privacy" 
+                  name="privacy"
+                  required
+                  class="mt-1 mr-3 w-4 h-4 text-blue-600 bg-gray-800 border-gray-700 rounded focus:ring-blue-500"
+                >
+                <label for="privacy" class="text-sm text-gray-300">
+                  I agree to the <a href="#" class="text-blue-400 hover:text-blue-300 underline">Privacy Policy</a> and consent to my information being used to respond to my inquiry. *
+                </label>
+              </div>
+              
+              <button 
+                type="submit" 
+                class="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors flex items-center justify-center"
+                data-id="submit-button"
+              >
+                <i data-lucide="send" class="w-5 h-5 mr-2"></i>
+                Send Message
+              </button>
+            </form>
+          </div>
+          
+          <!-- Contact Information -->
+          <div class="space-y-8" data-id="contact-info-section">
+            
+            <!-- Contact Cards -->
+            <div class="contact-card rounded-2xl p-8" data-id="contact-methods">
+              <h2 class="text-2xl font-bold text-white mb-6">Other Ways to Reach Us</h2>
+              
+              <div class="space-y-6">
+                <div class="flex items-start" data-id="email-contact">
+                  <div class="w-12 h-12 bg-blue-500 bg-opacity-20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <i data-lucide="mail" class="w-6 h-6 text-blue-400"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-white mb-1">Email Support</h3>
+                    <p class="text-gray-300 mb-2">For general inquiries and support</p>
+                    <a href="mailto:support@ciphra.dev" class="text-blue-400 hover:text-blue-300 transition-colors">
+                      support@ciphra.dev
+                    </a>
+                  </div>
+                </div>
+                
+                <div class="flex items-start" data-id="security-contact">
+                  <div class="w-12 h-12 bg-red-500 bg-opacity-20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <i data-lucide="shield-alert" class="w-6 h-6 text-red-400"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-white mb-1">Security Issues</h3>
+                    <p class="text-gray-300 mb-2">Report security vulnerabilities</p>
+                    <a href="mailto:security@ciphra.dev" class="text-red-400 hover:text-red-300 transition-colors">
+                      security@ciphra.dev
+                    </a>
+                  </div>
+                </div>
+                
+                <div class="flex items-start" data-id="partnership-contact">
+                  <div class="w-12 h-12 bg-green-500 bg-opacity-20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <i data-lucide="handshake" class="w-6 h-6 text-green-400"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-white mb-1">Partnerships</h3>
+                    <p class="text-gray-300 mb-2">Business development and partnerships</p>
+                    <a href="mailto:partnerships@ciphra.dev" class="text-green-400 hover:text-green-300 transition-colors">
+                      partnerships@ciphra.dev
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Response Time -->
+            <div class="contact-card rounded-2xl p-8" data-id="response-info">
+              <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                <i data-lucide="clock" class="w-5 h-5 mr-2"></i>
+                Response Times
+              </h3>
+              <div class="space-y-3 text-sm">
+                <div class="flex justify-between">
+                  <span class="text-gray-300">General Inquiries</span>
+                  <span class="text-white font-medium">24-48 hours</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-300">Technical Support</span>
+                  <span class="text-white font-medium">12-24 hours</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-300">Security Issues</span>
+                  <span class="text-red-400 font-medium">Immediate</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-300">Partnerships</span>
+                  <span class="text-white font-medium">2-3 business days</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- FAQ Link -->
+            <div class="contact-card rounded-2xl p-8" data-id="faq-link">
+              <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                <i data-lucide="help-circle" class="w-5 h-5 mr-2"></i>
+                Quick Answers
+              </h3>
+              <p class="text-gray-300 mb-4">
+                Looking for immediate help? Check our comprehensive FAQ section for answers to common questions.
+              </p>
+              <a href="#" class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors font-medium">
+                <i data-lucide="arrow-right" class="w-4 h-4 mr-2"></i>
+                Browse FAQ
+              </a>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="contact-card rounded-2xl p-8" data-id="social-links">
+              <h3 class="text-xl font-bold text-white mb-4">Follow Us</h3>
+              <div class="flex space-x-4">
+                <a href="#" class="w-10 h-10 bg-blue-500 bg-opacity-20 rounded-lg flex items-center justify-center text-blue-400 hover:bg-opacity-30 transition-colors" data-id="twitter-link">
+                  <i data-lucide="twitter" class="w-5 h-5"></i>
+                </a>
+                <a href="#" class="w-10 h-10 bg-gray-700 bg-opacity-50 rounded-lg flex items-center justify-center text-gray-400 hover:bg-opacity-70 transition-colors" data-id="github-link">
+                  <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+                <a href="#" class="w-10 h-10 bg-blue-600 bg-opacity-20 rounded-lg flex items-center justify-center text-blue-400 hover:bg-opacity-30 transition-colors" data-id="linkedin-link">
+                  <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-container" data-source="components/footer.html"></div>
+  
+  <!-- Badge -->
+  <div id="badge-container" data-source="components/badge.html"></div>
+
+  <script type="module">
+    import { loadComponent } from './scripts/components/loader.js';
+    import { initializeContactForm } from './scripts/contact-form.js';
+    
+    // Load all shared components
+    loadComponent('#navbar-container');
+    loadComponent('#footer-container');
+    loadComponent('#badge-container');
+    
+    // Initialize contact form
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeContactForm();
+    });
+    
+    // Initialize icons after components are loaded
+    setTimeout(() => {
+      lucide.createIcons();
+    }, 100);
+  </script>
+</body>
+</html>

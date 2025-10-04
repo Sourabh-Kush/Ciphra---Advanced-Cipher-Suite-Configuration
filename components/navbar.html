@@ -1,0 +1,40 @@
+<nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900 bg-opacity-95 backdrop-blur-sm border-b border-gray-800" data-id="main-navigation">
+  <div class="container mx-auto px-6">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <div class="flex items-center" data-id="nav-logo">
+        <a href="index.html" class="flex items-center space-x-3 text-xl font-bold text-white hover:text-blue-300 transition-colors">
+          <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+            <i data-lucide="shield" class="w-5 h-5 text-white"></i>
+          </div>
+          <span>Ciphra</span>
+        </a>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8" data-id="nav-menu-desktop">
+        <a href="index.html" class="text-gray-300 hover:text-white transition-colors font-medium" data-id="nav-home">Home</a>
+        <a href="configure.html" class="text-gray-300 hover:text-white transition-colors font-medium" data-id="nav-configure">Configure</a>
+        <a href="demo.html" class="text-gray-300 hover:text-white transition-colors font-medium" data-id="nav-demo">Demo</a>
+        <a href="about.html" class="text-gray-300 hover:text-white transition-colors font-medium" data-id="nav-about">About</a>
+        <a href="contact.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium" data-id="nav-contact">Contact</a>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-white p-2" data-id="mobile-menu-button" aria-label="Toggle mobile menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div class="hidden md:hidden bg-gray-900 border-t border-gray-800" data-id="nav-menu-mobile">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="index.html" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors font-medium" data-id="nav-mobile-home">Home</a>
+        <a href="configure.html" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors font-medium" data-id="nav-mobile-configure">Configure</a>
+        <a href="demo.html" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors font-medium" data-id="nav-mobile-demo">Demo</a>
+        <a href="about.html" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors font-medium" data-id="nav-mobile-about">About</a>
+        <a href="contact.html" class="block px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors font-medium" data-id="nav-mobile-contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>

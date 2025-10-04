@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Demo - Ciphra</title>
+  <meta name="description" content="Test and demonstrate your cipher suite configuration with live encryption and decryption examples.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Sofia Pro Font -->
+  <link rel="stylesheet" href="https://use.typekit.net/yjp3aho.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    body { font-family: "sofia-pro", sans-serif; }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .demo-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .code-block {
+      background: rgba(0, 0, 0, 0.3);
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    }
+    
+    .terminal {
+      background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .status-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse 2s infinite;
+    }
+    
+    .status-success { background-color: #10b981; }
+    .status-warning { background-color: #f59e0b; }
+    .status-error { background-color: #ef4444; }
+    .status-info { background-color: #3b82f6; }
+    
+    @keyframes typewriter {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    
+    .typewriter {
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typewriter 2s steps(40, end);
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+  <!-- Navigation -->
+  <div id="navbar-container" data-source="components/navbar.html"></div>
+
+  <!-- Header -->
+  <section class="pt-24 pb-12 gradient-bg" data-id="demo-header">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white" data-id="demo-title">
+        Live Cipher Demo
+      </h1>
+      <p class="text-xl text-blue-100 max-w-3xl mx-auto mb-8" data-id="demo-subtitle">
+        Test your cipher suite configuration with real-time encryption and decryption demonstrations.
+      </p>
+      
+      <!-- Current Configuration Display -->
+      <div class="demo-card rounded-2xl p-6 max-w-4xl mx-auto" data-id="current-config-display">
+        <h3 class="text-lg font-semibold mb-4 text-white flex items-center justify-center">
+          <i data-lucide="settings" class="w-5 h-5 mr-2"></i>
+          Current Configuration
+        </h3>
+        <div class="grid md:grid-cols-3 gap-4 text-sm">
+          <div class="text-center" data-id="config-cipher-display">
+            <div class="text-gray-400">Cipher Algorithm</div>
+            <div class="text-white font-semibold" id="current-cipher">Loading...</div>
+          </div>
+          <div class="text-center" data-id="config-kex-display">
+            <div class="text-gray-400">Key Exchange</div>
+            <div class="text-white font-semibold" id="current-kex">Loading...</div>
+          </div>
+          <div class="text-center" data-id="config-auth-display">
+            <div class="text-gray-400">Authentication</div>
+            <div class="text-white font-semibold" id="current-auth">Loading...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Interface -->
+  <section class="py-12 bg-gray-900" data-id="demo-interface">
+    <div class="container mx-auto px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-8">
+          
+          <!-- Encryption Demo -->
+          <div class="demo-card rounded-2xl p-8" data-id="encryption-demo">
+            <div class="flex items-center mb-6">
+              <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mr-4">
+                <i data-lucide="lock" class="w-5 h-5 text-white"></i>
+              </div>
+              <div>
+                <h2 class="text-2xl font-bold text-white">Encryption Test</h2>
+                <p class="text-gray-400">Enter plaintext to encrypt</p>
+              </div>
+            </div>
+            
+            <div class="space-y-4">
+              <div data-id="plaintext-input-section">
+                <label class="block text-sm font-medium text-gray-300 mb-2">Plaintext Message</label>
+                <textarea 
+                  id="plaintext-input" 
+                  class="w-full bg-gray-800 border border-gray-700 rounded-lg p-4 text-white resize-none focus:border-blue-500 focus:outline-none"
+                  rows="4"
+                  placeholder="Enter your message to encrypt..."
+                  data-id="plaintext-textarea"
+                >Hello, this is a secret message that will be encrypted using the selected cipher suite configuration.</textarea>
+              </div>
+              
+              <button 
+                id="encrypt-btn" 
+                class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center"
+                data-id="encrypt-button"
+              >
+                <i data-lucide="lock" class="w-4 h-4 mr-2"></i>
+                Encrypt Message
+              </button>
+              
+              <div data-id="encryption-output-section">
+                <label class="block text-sm font-medium text-gray-300 mb-2">Encrypted Output</label>
+                <div class="code-block rounded-lg p-4 min-h-[100px] border border-gray-700">
+                  <pre id="encrypted-output" class="text-green-400 text-sm whitespace-pre-wrap break-all" data-id="encrypted-output-text">Click "Encrypt Message" to see the encrypted output...</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Decryption Demo -->
+          <div class="demo-card rounded-2xl p-8" data-id="decryption-demo">
+            <div class="flex items-center mb-6">
+              <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
+                <i data-lucide="unlock" class="w-5 h-5 text-white"></i>
+              </div>
+              <div>
+                <h2 class="text-2xl font-bold text-white">Decryption Test</h2>
+                <p class="text-gray-400">Decrypt encrypted messages</p>
+              </div>
+            </div>
+            
+            <div class="space-y-4">
+              <div data-id="ciphertext-input-section">
+                <label class="block text-sm font-medium text-gray-300 mb-2">Encrypted Message</label>
+                <textarea 
+                  id="ciphertext-input" 
+                  class="w-full bg-gray-800 border border-gray-700 rounded-lg p-4 text-white resize-none focus:border-blue-500 focus:outline-none"
+                  rows="4"
+                  placeholder="Paste encrypted message here or encrypt a message first..."
+                  data-id="ciphertext-textarea"
+                ></textarea>
+              </div>
+              
+              <button 
+                id="decrypt-btn" 
+                class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center"
+                data-id="decrypt-button"
+              >
+                <i data-lucide="unlock" class="w-4 h-4 mr-2"></i>
+                Decrypt Message
+              </button>
+              
+              <div data-id="decryption-output-section">
+                <label class="block text-sm font-medium text-gray-300 mb-2">Decrypted Output</label>
+                <div class="code-block rounded-lg p-4 min-h-[100px] border border-gray-700">
+                  <pre id="decrypted-output" class="text-blue-400 text-sm whitespace-pre-wrap break-all" data-id="decrypted-output-text">Decrypted plaintext will appear here...</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Performance Metrics -->
+        <div class="mt-8 demo-card rounded-2xl p-8" data-id="performance-metrics">
+          <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+            <i data-lucide="activity" class="w-6 h-6 mr-3"></i>
+            Performance Metrics
+          </h2>
+          
+          <div class="grid md:grid-cols-4 gap-6" data-id="metrics-grid">
+            <div class="text-center" data-id="encryption-time-metric">
+              <div class="w-16 h-16 bg-green-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3">
+                <i data-lucide="clock" class="w-8 h-8 text-green-400"></i>
+              </div>
+              <h3 class="text-lg font-semibold text-white">Encryption Time</h3>
+              <p class="text-2xl font-bold text-green-400" id="encryption-time">-</p>
+              <p class="text-sm text-gray-400">milliseconds</p>
+            </div>
+            
+            <div class="text-center" data-id="decryption-time-metric">
+              <div class="w-16 h-16 bg-blue-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3">
+                <i data-lucide="zap" class="w-8 h-8 text-blue-400"></i>
+              </div>
+              <h3 class="text-lg font-semibold text-white">Decryption Time</h3>
+              <p class="text-2xl font-bold text-blue-400" id="decryption-time">-</p>
+              <p class="text-sm text-gray-400">milliseconds</p>
+            </div>
+            
+            <div class="text-center" data-id="throughput-metric">
+              <div class="w-16 h-16 bg-purple-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3">
+                <i data-lucide="trending-up" class="w-8 h-8 text-purple-400"></i>
+              </div>
+              <h3 class="text-lg font-semibold text-white">Throughput</h3>
+              <p class="text-2xl font-bold text-purple-400" id="throughput">-</p>
+              <p class="text-sm text-gray-400">bytes/sec</p>
+            </div>
+            
+            <div class="text-center" data-id="security-level-metric">
+              <div class="w-16 h-16 bg-yellow-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3">
+                <i data-lucide="shield" class="w-8 h-8 text-yellow-400"></i>
+              </div>
+              <h3 class="text-lg font-semibold text-white">Security Level</h3>
+              <p class="text-2xl font-bold text-yellow-400" id="security-level">-</p>
+              <p class="text-sm text-gray-400">bits</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Terminal Output -->
+        <div class="mt-8 demo-card rounded-2xl overflow-hidden" data-id="terminal-output">
+          <div class="bg-gray-800 px-6 py-3 border-b border-gray-700 flex items-center">
+            <div class="flex space-x-2 mr-4">
+              <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+              <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+              <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            </div>
+            <span class="text-sm text-gray-400 font-mono">Ciphra Demo Terminal</span>
+          </div>
+          
+          <div class="terminal p-6 font-mono text-sm min-h-[200px] max-h-[400px] overflow-y-auto" data-id="terminal-content">
+            <div id="terminal-output" class="space-y-2" data-id="terminal-log">
+              <div class="text-green-400">
+                <span class="status-indicator status-success mr-2"></span>
+                Ciphra Demo Terminal initialized
+              </div>
+              <div class="text-blue-400">
+                <span class="status-indicator status-info mr-2"></span>
+                Waiting for encryption/decryption operations...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-container" data-source="components/footer.html"></div>
+  
+  <!-- Badge -->
+  <div id="badge-container" data-source="components/badge.html"></div>
+
+  <script type="module">
+    import { loadComponent } from './scripts/components/loader.js';
+    import { initializeDemoInterface } from './scripts/demo-interface.js';
+    
+    // Load all shared components
+    loadComponent('#navbar-container');
+    loadComponent('#footer-container');
+    loadComponent('#badge-container');
+    
+    // Initialize demo interface
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeDemoInterface();
+    });
+    
+    // Initialize icons after components are loaded
+    setTimeout(() => {
+      lucide.createIcons();
+    }, 100);
+  </script>
+</body>
+</html>
